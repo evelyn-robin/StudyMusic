@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lo-fi Music</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #3c2f2f; /* Text color (RGB 60, 47, 47) */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Video background */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensures video is behind content */
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #6e5d5d; /* Solid background color */
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s; /* Fade-in animation */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #fff4e6; /* Lightest color for text */
+            opacity: 0;
+            animation: floatIn 1.5s ease-out forwards 0.5s; /* Floating title animation */
+        }
+
+        @keyframes floatIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Navigation Menu Styling */
+        .menu {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            animation: slideInMenu 1.2s ease-out forwards 1s; /* Slide-in menu animation */
+        }
+
+        .menu a {
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 150px;
+            background-color: #b8987aa4; /* RGB (190,155,123) */
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff4e6;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu a:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes slideInMenu {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.5s; /* Fade-in animation */
+            z-index: 1; /* Keeps the content above the video */
+        }
+
+        .lofi-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #806e69; /* Solid background for the lofi section */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff4e6;
+            opacity: 0;
+            animation: fadeInSection 1.5s ease-out forwards 2s; /* Fade-in for the section */
+        }
+
+        .lofi-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .lofi-section p {
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInSection {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6e5d5d; /* Solid background */
+            color: #fff4e6; /* Light text color */
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards 2.5s; /* Fade-in for footer */
+            z-index: 1;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video id="bg-video" autoplay muted loop>
+        <source src="file:///C:/Users/Evelyn%20Robin/Downloads/BCG%20(1).mp4" type="video/mp4">
+    </video>
+
+    <!-- Header -->
+    <header>
+        <h1>Lo-fi Music</h1>
+
+        <!-- Navigation Menu -->
+        <div class="menu">
+            <a href="file:///C:/Users/Evelyn%20Robin/OneDrive/Documents/StudyMusic/studymusic.html" id="homepage">Home</a>
+            <a href="file:///C:/Users/Evelyn%20Robin/OneDrive/Documents/StudyMusic/Lo-fi.html" id="lofi">Lo-fi</a>
+            <a href="file:///C:/Users/Evelyn%20Robin/OneDrive/Documents/StudyMusic/Ambient.html" id="ambient">Ambient</a>
+            <a href="file:///C:/Users/Evelyn%20Robin/OneDrive/Documents/StudyMusic/Nature.html" id="nature">Nature</a>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="lofi-section">
+            <h2>Relax with Lo-fi Beats</h2>
+            <p>
+                Enjoy a selection of calming Lo-fi tracks to help you focus during your study sessions.
+                Lo-fi music is known for its soothing, repetitive beats that create the perfect background noise
+                for concentration and productivity.
+            </p>
+
+            <audio controls>
+                <source src="file:///C:/Users/Evelyn%20Robin/Downloads/lofi%201.mp3" type="audio/mp3">
+            </audio>
+            
+            <audio controls>
+                <source src="file:///C:/Users/Evelyn%20Robin/Downloads/lofi%202.mp3" type="audio/mp3">
+            </audio>
+            
+            <audio controls>
+                <source src="file:///C:/Users/Evelyn%20Robin/Downloads/lofi%203.mp3" type="audio/mp3">
+            </audio>            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Study Music | Lo-fi Beats for Focus
+    </footer>
+
+</body>
+</html>
